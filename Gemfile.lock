@@ -4,7 +4,7 @@ GEM
     backports (3.8.0)
     erubi (1.6.1)
     multi_json (1.12.1)
-    rack (1.6.5)
+    rack (1.6.11)
     rack-protection (1.5.3)
       rack
     rack-test (0.7.0)
@@ -29,3 +29,6 @@ DEPENDENCIES
   erubi
   sinatra
   sinatra-contrib
+
+BUNDLED WITH
+   1.17.3
