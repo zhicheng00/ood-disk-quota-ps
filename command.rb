@@ -2,18 +2,18 @@ require 'open3'
 
 class Command
   def to_s
-    "ps aux | egrep '[A]pp|[r]uby|[n]ginx'"
+    "/home/svu/e0775105/bin/hpcs"
   end
 
-  AppProcess = Struct.new(:user, :pid, :pct_cpu, :pct_mem, :vsz, :rss, :tty, :stat, :start, :time, :command)
+  Quota = Struct.new(:homedir, :home_usage, :home_quota, :home_limit, :home_status, :hpctmpdir, :hpctmp_usage, :hpctmp_limit, :hpctmp_status)
 
   # Parse a string output from the `ps aux` command and return an array of
   # AppProcess objects, one per process
   def parse(output)
     lines = output.strip.split("\n")
-    lines.map do |line|
-      AppProcess.new(*(line.split(" ", 11)))
-    end
+    line5 = lines[5].tr(',', ' ')
+    line12 = lines[12].tr(',', ' ')
+    [Quota.new(*(line5.split + line12.split))]
   end
 
   # Execute the command, and parse the output, returning and array of
