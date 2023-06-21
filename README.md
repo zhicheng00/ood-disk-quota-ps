@@ -1,6 +1,6 @@
-# ood-example-ps
+# ood-disk-quota-ps
 
-Example Open OnDemand app that displays the output of `ps`
+Open OnDemand app that displays disk quota information, customised for NUS HPC
 
 
 ## Install
