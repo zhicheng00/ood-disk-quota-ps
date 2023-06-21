@@ -10,7 +10,7 @@ end
 
 helpers do
   def dashboard_title
-    "Open OnDemand"
+    "NUS HPC OnDemand"
   end
 
   def dashboard_url
@@ -18,14 +18,14 @@ helpers do
   end
 
   def title
-    "Passenger App Processes"
+    "Disk Quota"
   end
 end
 
 # Define a route at the root '/' of the app.
 get '/' do
   @command = Command.new
-  @processes, @error = @command.exec
+  @quotas, @error = @command.exec
 
   # Render the view
   erb :index
