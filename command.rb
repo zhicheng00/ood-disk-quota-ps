@@ -2,7 +2,7 @@ require 'open3'
 
 class Command
   def to_s
-    "/home/svu/e0775105/bin/hpcs"
+    "hpcs"
   end
 
   Quota = Struct.new(:homedir, :home_usage, :home_quota, :home_limit, :home_status, :hpctmpdir, :hpctmp_usage, :hpctmp_limit, :hpctmp_status)
